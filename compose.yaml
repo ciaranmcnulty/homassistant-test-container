@@ -1,0 +1,22 @@
+---
+services:
+  homeassistant:
+    build: .
+    ports:
+        - "8123:8123"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8123 || exit 1"]
+      interval: "30s"
+      timeout: "10s"
+      retries: "5"
+
+  test:
+    image: "alpine/curl"
+    environment:
+      HA_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhOWRkNzY0NDkwMTA0NTg2ODVmMmZjNjFhZTRkNWY2NiIsImlhdCI6MTc2MjE3MTYzNSwiZXhwIjoyMDc3NTMxNjM1fQ.ud4A0VlTCDwE-Ir94AC4R9QOui3rqnGd4ib24AvokLY"
+    depends_on:
+      homeassistant:
+        condition: "service_healthy"
+    volumes:
+      - "./test.sh:/test.sh"
+    entrypoint: [ "/bin/sh", "/test.sh" ]

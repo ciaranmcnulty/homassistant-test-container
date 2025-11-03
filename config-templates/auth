@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth",
+  "data": {
+    "users": [
+      {
+        "id": "baa9c0c9bd61476587a26436cafaf51f",
+        "group_ids": [
+          "system-read-only"
+        ],
+        "is_owner": false,
+        "is_active": true,
+        "name": "Home Assistant Content",
+        "system_generated": true,
+        "local_only": false
+      },
+      {
+        "id": "af1e00d6c82045c0879f5936b95ea6ff",
+        "group_ids": [
+          "system-admin"
+        ],
+        "is_owner": true,
+        "is_active": true,
+        "name": "${HA_USER_NAME}",
+        "system_generated": false,
+        "local_only": false
+      }
+    ],
+    "groups": [
+      {
+        "id": "system-admin",
+        "name": "Administrators"
+      },
+      {
+        "id": "system-users",
+        "name": "Users"
+      },
+      {
+        "id": "system-read-only",
+        "name": "Read Only"
+      }
+    ],
+    "credentials": [
+      {
+        "id": "c34b0e034d9143d4b022d7c688d3f5ea",
+        "user_id": "af1e00d6c82045c0879f5936b95ea6ff",
+        "auth_provider_type": "homeassistant",
+        "auth_provider_id": null,
+        "data": {
+          "username": "${HA_USER}"
+        }
+      }
+    ],
+    "refresh_tokens": [
+      {
+        "id": "a9dd76449010458685f2fc61ae4d5f66",
+        "user_id": "af1e00d6c82045c0879f5936b95ea6ff",
+        "client_id": null,
+        "client_name": "test_token",
+        "client_icon": null,
+        "token_type": "long_lived_access_token",
+        "created_at": "2025-11-03T12:07:15.029963+00:00",
+        "access_token_expiration": 315360000.0,
+        "token": "${HA_TOKEN}",
+        "jwt_key": "5f5eb1b4622a63ac72c680529d6da7674e807db7cf62c6ededa1a3a641886b59f8c267bc54b47fe3e75d8dd95f17e30b0b34605a3d236618012c4e5fa3a56b8c",
+        "last_used_at": "2025-11-03T12:07:15.030079+00:00",
+        "last_used_ip": null,
+        "expire_at": null,
+        "credential_id": null,
+        "version": "2025.10.4"
+      }
+    ]
+  }
+}
